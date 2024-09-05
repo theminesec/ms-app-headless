@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="shop_type">
+        <item>@string/shop_type_1</item>
+        <item>@string/shop_type_2</item>
+        <item>@string/shop_type_3</item>
+    </string-array>
+
+    <string-array name="language_options">
+        <item>@string/english_str</item>
+        <item>@string/chinese_str</item>
+        <item>@string/french_str</item>
+        <item>@string/portugar_str</item>
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  Disabled  -->
+    <item android:alpha="@dimen/material_emphasis_disabled" android:color="?colorMuted" android:state_enabled="false" />
+    <!--  Checked  -->
+    <item android:color="?colorSecondary" android:state_checked="true" />
+    <!--  Idle -->
+    <item android:color="?colorSecondary" />
+
+</selector>

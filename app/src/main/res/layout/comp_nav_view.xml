@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.navigation.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationFirstView"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:menu="@menu/drawer"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationSecondView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_md"
+            app:layout_constraintBottom_toTopOf="@id/separatorLine"
+            app:menu="@menu/drawer_bottom"
+            />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/separatorLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_md"
+            android:layout_marginVertical="@dimen/space_xl"
+            app:layout_constraintBottom_toTopOf="@id/merchantShop"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/merchantShop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_lg"
+            android:src="@drawable/ico_biz_merchant"
+            app:layout_constraintBottom_toBottomOf="@id/merchantUuid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/merchantName"
+            app:tint="?colorOnNavigation"
+            />
+        <TextView
+            android:id="@+id/merchantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_md"
+            android:textAppearance="?textAppearanceTitleMedium"
+            android:textColor="?colorOnNavigation"
+            app:layout_constraintBottom_toTopOf="@id/merchantUuid"
+            app:layout_constraintStart_toEndOf="@id/merchantShop"
+            tools:text="Merchant name"
+            />
+        <TextView
+            android:id="@+id/merchantUuid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_md"
+            android:alpha=".72"
+            android:textAppearance="?textAppearanceBodyMedium"
+            android:textColor="?colorOnNavigation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/merchantShop"
+            tools:text="Merchant ID"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.navigation.NavigationView>

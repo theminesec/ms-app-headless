@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Branding  -->
+    <!--  Override per brand  -->
+    <color name="brand_primary">#29D657</color>
+    <color name="brand_primary_foreground">#F0FDF4</color>
+    <color name="brand_secondary">#0A307A</color>
+    <color name="brand_secondary_foreground">#EDF2FD</color>
+
+    <!--  basic background, surface  -->
+    <color name="basic_background">#ffffff</color>
+    <color name="basic_foreground">#0F172A</color>
+    <color name="basic_muted">#F1F5F9</color>
+    <color name="basic_muted_foreground">#94A3B8</color>
+    <color name="basic_accent">#E2E8F0</color>
+    <color name="basic_accent_foreground">#475569</color>
+
+    <!--  Status  -->
+    <!--  [optional] Override per brand  -->
+    <!--  [optional] Override per night theme  -->
+    <color name="status_approval">#29D657</color>
+    <color name="status_approval_foreground">#F0FDF4</color>
+    <color name="status_danger">#EF4444</color>
+    <color name="status_danger_container">#661022</color>
+    <color name="status_danger_foreground">#FEF2F2</color>
+
+    <!--  Utility  -->
+    <!--  [optional] Override per brand  -->
+    <!--  [optional] Override per night theme  -->
+    <color name="uti_transparent">#00FFFFFF</color>
+    <color name="uti_card">#FFFFFF</color>
+    <color name="uti_card_foreground">#0F172A</color>
+    <color name="uti_input">#8699C1</color>
+    <color name="uti_ring">#CBD5E1</color>
+    <color name="uti_selection">#28DAF6</color>
+    <color name="uti_scrim">#B3000000</color>
+
+    <!-- Card Brand, do not override -->
+    <color name="color_visa">#1434CA</color>
+    <color name="color_mastercard">#F79E1B</color>
+    <color name="color_jcb">#40A737</color>
+    <color name="color_unionpay">#E0002B</color>
+    <color name="color_amex">#006FCF</color>
+    <color name="color_alipay">#1677FF</color>
+    <color name="color_wechat">#09BB07</color>
+    <color name="color_fps">#56BBE9</color>
+    <color name="color_payme">#DB0011</color>
+    <color name="color_octopus">#F5911E</color>
+    <color name="color_cash">#00A590</color>
+
+    <!--  Logo  -->
+    <color name="pure_surface">#000000</color>
+
+    <!--  QR prompt  -->
+    <color name="color_qr_prompt_bg">#1F000000</color>
+    <!--  TODO: remove later... required by eric's library  -->
+    <color name="transparent">#00000000</color>
+    <color name="radioGrey">#8699C1</color>
+</resources>

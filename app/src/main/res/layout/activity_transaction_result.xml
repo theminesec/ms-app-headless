@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/space_md"
+    tools:context="com.msa.headless.ui.view.ui.TransactionResultActivity"
+    >
+
+    <TextView
+        android:id="@+id/txnType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drawer_sale"
+        android:textAppearance="?textAppearanceTitleMedium"
+        android:layout_marginTop="@dimen/space_md"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- amount -->
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_md"
+        android:textAppearance="?textAmountDisplayLarge"
+        android:textColor="?colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@id/tvTranStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCurrency"
+        app:layout_constraintTop_toBottomOf="@id/txnType"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="150.00"
+        />
+
+    <TextView
+        android:id="@+id/tvCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/currency_usd"
+        android:textAppearance="?textAmountDisplayLarge"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvAmount"
+        app:layout_constraintEnd_toStartOf="@id/tvAmount"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAmount"
+        />
+
+
+    <!-- transaction result message -->
+    <TextView
+        android:id="@+id/tvTranStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:textAppearance="?textAppearanceTitleMedium"
+        android:textColor="?colorApproval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount"
+        tools:text="Approved"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivTranStatus"
+        android:layout_width="@dimen/icon_3xl"
+        android:layout_height="@dimen/icon_3xl"
+        android:src="@drawable/status_approved"
+        android:layout_marginTop="@dimen/space_lg"
+        app:layout_constraintTop_toBottomOf="@id/tvTranStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupPmInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_3xl"
+        app:layout_constraintTop_toBottomOf="@id/ivTranStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPaymentMethod"
+            android:layout_width="@dimen/icon_2xl"
+            android:layout_height="@dimen/icon_2xl"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/acceptance_visa"
+            />
+
+        <TextView
+            android:id="@+id/tvPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_md"
+            android:textAppearance="?textAppearanceTitleMedium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvAccount"
+            app:layout_constraintStart_toEndOf="@id/ivPaymentMethod"
+            tools:text="Visa"
+            />
+
+        <TextView
+            android:id="@+id/tvAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?colorOnAccent"
+            android:layout_marginStart="@dimen/space_md"
+            android:textAppearance="?textAppearanceTitleSmall"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivPaymentMethod"
+            app:layout_constraintTop_toBottomOf="@id/tvPaymentMethod"
+            tools:text="**** **** **** 1234"
+            tools:visibility="visible"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?textAppearanceTitleMedium"
+        android:textColor="?colorOnAccent"
+        android:layout_marginTop="@dimen/space_md"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/groupPmInfo"
+        android:gravity="center"
+        tools:text="Error code"
+        tools:visibility="visible"
+        />
+
+    <!-- transaction trace no-->
+    <TextView
+        android:id="@+id/tvTrace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xl"
+        android:textAppearance="?textAppearanceBodyLarge"
+        android:textColor="?colorOnAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvError"
+        tools:text="Trace: 123456"
+        />
+
+    <!--Approval Number-->
+    <TextView
+        android:id="@+id/tvApproval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?textAppearanceBodyLarge"
+        android:textColor="?colorOnAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTrace"
+        tools:text="Approval code: 0000000"
+        />
+
+    <!--Error Track-->
+    <TextView
+        android:id="@+id/tvTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?textAppearanceBodyLarge"
+        android:textColor="?colorOnAccent"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvApproval"
+        tools:text="Track: 0000000"
+        tools:visibility="visible"
+        />
+
+    <!-- assistant group buttons -->
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/groupReceipts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_sm"
+        app:constraint_referenced_ids="btnEmail,btnQrReceipt,btnReceipt,btnShare"
+        app:flow_horizontalGap="@dimen/space_sm"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewTran"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEmail"
+        style="?buttonOutlineSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ico_comm_email"
+        app:iconPadding="0dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnQrReceipt"
+        style="?buttonOutlineSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ico_entry_qr_merchant_present"
+        app:iconPadding="0dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReceipt"
+        style="?buttonOutlineSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ico_comm_receipt"
+        app:iconPadding="0dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShare"
+        style="?buttonOutlineSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ico_comm_share"
+        app:iconPadding="0dp"
+        />
+
+    <!-- start new payment button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNewTran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_md"
+        android:minHeight="@dimen/space_4xl"
+        android:text="@string/start_new_payment"
+        app:layout_constraintBottom_toTopOf="@id/footerCopyright"
+        />
+
+    <!-- powered by link -->
+    <TextView
+        android:id="@+id/footerCopyright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/powered_by_"
+        android:textAppearance="?textAppearanceFooterCopyright"
+        android:textColor="?colorOnMuted"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

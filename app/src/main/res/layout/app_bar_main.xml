@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context="com.msa.headless.ui.view.ui.PaymentActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ico_control_menu"
+            app:navigationIconTint="?colorPrimary"
+            tools:title="Merchant name"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/txnType"
+        android:layout_marginHorizontal="@dimen/space_md"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drawer_sale"
+        android:textAppearance="?textAppearanceTitleMedium"
+        android:layout_marginTop="@dimen/space_md"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <!-- amount with description -->
+    <TextView
+        android:id="@+id/tvCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$"
+        android:textAppearance="?textAmountDisplayLarge"
+        android:textColor="?colorOnMuted"
+        app:layout_constraintBottom_toBottomOf="@id/amountEdit"
+        app:layout_constraintEnd_toStartOf="@id/amountEdit"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/amountEdit"
+        tools:ignore="HardcodedText"
+        tools:textColor="?colorOnSurface"
+        />
+
+    <!--  todo: guard max length, layout text auto size won't work with editText  -->
+    <EditText
+        android:id="@+id/amountEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:focusable="false"
+        android:inputType="number"
+        android:textAppearance="?textAmountDisplayLarge"
+        android:textColor="?colorOnMuted"
+        android:layout_marginTop="@dimen/space_md"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCurrency"
+        app:layout_constraintTop_toBottomOf="@id/txnType"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="LabelFor"
+        android:text="0.00"
+        tools:textColor="?colorOnSurface"
+        />
+
+    <!--Add Description-->
+    <EditText
+        android:id="@+id/addDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/space_md"
+        android:autofillHints="false"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="@string/add_description"
+        android:inputType="text"
+        android:maxLength="50"
+        android:maxLines="1"
+        android:padding="@dimen/space_sm"
+        android:singleLine="true"
+        android:textAppearance="?textAppearanceLabelLarge"
+        android:textColor="?colorOnAccent"
+        app:layout_constraintTop_toBottomOf="@id/amountEdit"
+        />
+
+    <!-- keyboard, 必须采用弹性布局方式进行自动压缩-->
+    <!-- Keyboard Area -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keypadContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_md"
+        android:layout_marginVertical="@dimen/space_lg"
+        app:layout_constraintBottom_toTopOf="@id/doPayment"
+        >
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowKeypad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:constraint_referenced_ids="
+                cashKeypadButton1,
+                cashKeypadButton2,
+                cashKeypadButton3,
+                cashKeypadButton4,
+                cashKeypadButton5,
+                cashKeypadButton6,
+                cashKeypadButton7,
+                cashKeypadButton8,
+                cashKeypadButton9,
+                cashKeypadButton00,
+                cashKeypadButton0,
+                cashKeypadButtonBack
+            "
+            app:flow_horizontalGap="@dimen/space_xs"
+            app:flow_maxElementsWrap="3"
+            app:flow_verticalGap="@dimen/space_xs"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_min="320dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton1"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="1"
+            android:text="@string/label_keypad_1"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton2"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="2"
+            android:text="@string/label_keypad_2"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton3"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="3"
+            android:text="@string/label_keypad_3"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton4"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="4"
+            android:text="@string/label_keypad_4"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton5"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="5"
+            android:text="@string/label_keypad_5"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton6"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="6"
+            android:text="@string/label_keypad_6"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton7"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="7"
+            android:text="@string/label_keypad_7"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton8"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="8"
+            android:text="@string/label_keypad_8"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton9"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="9"
+            android:text="@string/label_keypad_9"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton00"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="00"
+            android:text="@string/label_keypad_00"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButton0"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="0"
+            android:text="@string/label_keypad_0"
+            tools:ignore="MissingConstraints"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cashKeypadButtonBack"
+            style="@style/Widget.MSA.KeypadKey"
+            android:layout_width="0dp"
+            android:layout_height="84dp"
+            android:tag="@string/key_back_tag"
+            android:text="@string/label_keypad_back"
+            tools:ignore="MissingConstraints"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- charge button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/doPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_md"
+        android:enabled="false"
+        android:text="@string/charge_str"
+        app:layout_constraintBottom_toTopOf="@id/footerCopyright"
+        tools:enabled="true"
+        />
+
+    <!-- powered by -->
+    <TextView
+        android:id="@+id/footerCopyright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_md"
+        android:gravity="center"
+        android:text="@string/powered_by_"
+        android:textAppearance="?textAppearanceFooterCopyright"
+        android:textColor="?colorOnMuted"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <group android:checkableBehavior="single">
+        <!--        <item-->
+        <!--            android:id="@+id/nav_get_started"-->
+        <!--            android:icon="@drawable/ico_indicator_info"-->
+        <!--            android:title="@string/drawer_get_started" />-->
+        <item
+            android:id="@+id/nav_sale"
+            android:icon="@drawable/ico_type_sale"
+            android:title="@string/drawer_sale"
+            tools:checked="true" />
+        <item
+            android:id="@+id/nav_settlement"
+            android:icon="@drawable/ico_biz_settlement"
+            android:title="@string/drawer_settlement" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ico_biz_history"
+            android:title="@string/drawer_history" />
+        <item
+            android:id="@+id/nav_auth"
+            android:icon="@drawable/icon_biz_preauth"
+            android:title="@string/drawer_auth" />
+    </group>
+
+</menu>

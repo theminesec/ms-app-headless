@@ -1,0 +1,64 @@
+<resources>
+    <!--  general space  -->
+    <dimen name="space_3xs">2dp</dimen>
+    <dimen name="space_2xs">4dp</dimen>
+    <dimen name="space_xs">8dp</dimen>
+    <dimen name="space_sm">12dp</dimen>
+    <dimen name="space_md">16dp</dimen>
+    <dimen name="space_lg">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+    <dimen name="space_3xl">48dp</dimen>
+    <dimen name="space_4xl">64dp</dimen>
+    <dimen name="space_5xl">80dp</dimen>
+    <dimen name="space_6xl">96dp</dimen>
+
+    <!--  Icon size  -->
+    <dimen name="icon_sm">16dp</dimen>
+    <dimen name="icon_md">20dp</dimen>
+    <dimen name="icon_lg">24dp</dimen>
+    <dimen name="icon_xl">32dp</dimen>
+    <dimen name="icon_2xl">48dp</dimen>
+    <dimen name="icon_3xl">72dp</dimen>
+
+    <!--  radius  -->
+    <dimen name="radius_sm">4dp</dimen>
+    <dimen name="radius_md">6dp</dimen>
+    <dimen name="radius_lg">12dp</dimen>
+    <dimen name="radius_xl">16dp</dimen>
+
+    <!--  Animation size  -->
+    <dimen name="animation_xs">72dp</dimen>
+    <dimen name="animation_sm">160dp</dimen>
+    <dimen name="animation_md">280dp</dimen>
+
+    <!--  QR scanner view finder  -->
+    <dimen name="qr_view_finder">240dp</dimen>
+
+    <!--text size-->
+    <dimen name="fontsize_xs">12sp</dimen>
+    <dimen name="fontsize_sm">14sp</dimen>
+    <dimen name="fontsize_md">16sp</dimen>
+    <dimen name="fontsize_lg">18sp</dimen>
+    <dimen name="fontsize_xl">24sp</dimen>
+    <dimen name="fontsize_2xl">32sp</dimen>
+    <dimen name="fontsize_3xl">48sp</dimen>
+    <dimen name="fontsize_4xl">72sp</dimen>
+
+    <!--  Util - min/ max sizes  -->
+    <dimen name="min_touch_default">56dp</dimen>
+    <dimen name="min_touch_sm">48dp</dimen>
+    <dimen name="min_touch_xs">40dp</dimen>
+    <dimen name="min_button_width">72dp</dimen>
+    <dimen name="amount_large_height">80dp</dimen> <!--  dynamic text display height  -->
+
+    <!--  elevation  -->
+    <dimen name="elevation_sm">2dp</dimen>
+    <dimen name="elevation_md">4dp</dimen>
+    <dimen name="elevation_lg">12dp</dimen>
+
+    <dimen name="m3_alert_dialog_action_top_padding">8dp</dimen>
+    <dimen name="m3_alert_dialog_action_bottom_padding">8dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

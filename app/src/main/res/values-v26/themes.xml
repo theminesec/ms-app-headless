@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Comp.MSA.Button.Text.Primary" parent="Widget.Material3.Button.TextButton">
+        <item name="android:paddingHorizontal">@dimen/space_xs</item>
+        <item name="android:paddingVertical">@dimen/space_xs</item>
+        <item name="android:minHeight">@dimen/min_touch_xs</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+    </style>
+</resources>

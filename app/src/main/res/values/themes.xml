@@ -1,0 +1,383 @@
+<resources>
+    <!--  Top level theme  -->
+    <style name="Theme.MSA.DayNight" parent="Base.Theme.MSA" />
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MSA" parent="Theme.Material3.DayNight.NoActionBar">
+        <!--  Colors  -->
+        <!--  Basic  -->
+        <item name="colorSurface">@color/basic_background</item>
+        <item name="colorOnSurface">@color/basic_foreground</item>
+        <item name="colorMuted">@color/basic_muted</item>
+        <item name="colorOnMuted">@color/basic_muted_foreground</item>
+        <item name="colorAccent">@color/basic_accent</item>
+        <item name="colorOnAccent">@color/basic_accent_foreground</item>
+
+        <!--  Brand  -->
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/brand_primary_foreground</item>
+        <item name="colorSecondary">@color/brand_secondary</item>
+        <item name="colorOnSecondary">@color/brand_secondary_foreground</item>
+
+        <item name="colorNavigation">@color/brand_secondary</item>
+        <item name="colorOnNavigation">@color/brand_secondary_foreground</item>
+
+        <!--  Status  -->
+        <item name="colorApproval">@color/status_approval</item>
+        <item name="colorOnApproval">@color/status_approval_foreground</item>
+        <item name="colorError">@color/status_danger</item>
+        <item name="colorOnErrorContainer">@color/status_danger_container</item>
+        <item name="colorOnError">@color/status_danger_foreground</item>
+
+        <!--  Utility  -->
+        <item name="colorInput">@color/uti_input</item>
+        <item name="colorRing">@color/uti_ring</item>
+        <item name="colorOutline">@color/uti_input</item>
+        <item name="colorSurfaceVariant">@color/basic_accent</item>
+        <item name="colorSelection">@color/uti_selection</item>
+
+        <!--  Typography  -->
+        <item name="android:includeFontPadding">false
+        </item> <!-- disable default weird android font padding -->
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.MSA.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.MSA.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.MSA.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.MSA.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.MSA.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.MSA.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.MSA.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.MSA.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.MSA.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.MSA.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.MSA.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.MSA.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.MSA.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.MSA.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.MSA.LabelSmall</item>
+        <item name="textAmountDisplayLarge">@style/TextAppearance.MSA.AmountLarge</item>
+        <item name="textAmountDisplayMedium">@style/TextAppearance.MSA.AmountMedium</item>
+        <item name="textAmountDisplaySmall">@style/TextAppearance.MSA.AmountSmall</item>
+        <item name="textAppearanceFooterCopyright">@style/TextAppearance.MSA.FooterCopyright</item>
+
+        <!--  Shape  -->
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.MSA.Corner.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.MSA.Corner.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.MSA.Corner.Large</item>
+
+        <!--  Sys UI  -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Set to transparent if your app is drawing behind the status bar. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Set the status bar light and content dark. -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!--  Widget  -->
+        <!--  Button  -->
+        <item name="materialButtonStyle">@style/Comp.MSA.Button.Flat.Primary</item>
+        <!--  MineSec Custom Style  -->
+        <item name="buttonFlatPrimary">@style/Comp.MSA.Button.Flat.Primary</item>
+        <item name="buttonOutlinePrimary">@style/Comp.MSA.Button.Outline.Primary</item>
+        <item name="buttonTextPrimary">@style/Comp.MSA.Button.Text.Primary</item>
+        <item name="buttonIconPrimary">@style/Comp.MSA.Button.Icon.Primary</item>
+        <item name="buttonFlatSecondary">@style/Comp.MSA.Button.Flat.Secondary</item>
+        <item name="buttonOutlineSecondary">@style/Comp.MSA.Button.Outline.Secondary</item>
+        <item name="buttonTextSecondary">@style/Comp.MSA.Button.Text.Secondary</item>
+        <item name="buttonIconSecondary">@style/Comp.MSA.Button.Icon.Secondary</item>
+        <item name="buttonFlatDanger">@style/Comp.MSA.Button.Flat.Danger</item>
+        <item name="buttonOutlineDanger">@style/Comp.MSA.Button.Outline.Danger</item>
+        <item name="buttonTextDanger">@style/Comp.MSA.Button.Text.Danger</item>
+        <item name="buttonIconDanger">@style/Comp.MSA.Button.Icon.Danger</item>
+
+        <!--  Text input theme  -->
+        <item name="textInputStyle">@style/Comp.MSA.Input</item>
+        <item name="textInputOutlinedExposedDropdownMenuStyle">
+            @style/Comp.MSA.Input.ExposedDropdownMenu
+        </item>
+
+        <item name="checkboxStyle">@style/Comp.MSA.CheckBox</item>
+        <item name="radioButtonStyle">@style/Comp.MSA.RadioButton</item>
+        <item name="chipStyle">@style/Comp.MSA.Chip</item>
+        <item name="chipGroupStyle">@style/Comp.MSA.ChipGroup</item>
+
+        <!--  Display  -->
+        <item name="circularProgressIndicatorStyle">@style/Comp.MSA.CircularProgressIndicator</item>
+
+        <item name="toolbarStyle">@style/Comp.MSA.Toolbar</item>
+        <item name="appBarLayoutStyle">@style/Comp.MSA.AppBarLayout</item>
+        <item name="navigationViewStyle">@style/Comp.MSA.NavigationView</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MSA.MaterialAlertDialog</item>
+
+        <!--  turn off the elevated card foreground color  -->
+        <item name="elevationOverlayEnabled">false</item>
+
+        <!--  Widget overrider..  -->
+        <item name="activationScreenLogo">@style/Comp.MSA.ActivationScreen.Logo</item>
+        <item name="activationScreenTitle">@style/Comp.MSA.ActivationScreen.Title</item>
+    </style>
+
+    <!--  Basic blocks  -->
+    <style name="ShapeAppearance.MSA.Corner.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_sm</item>
+    </style>
+
+    <style name="ShapeAppearance.MSA.Corner.Medium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_md</item>
+    </style>
+
+    <style name="ShapeAppearance.MSA.Corner.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_lg</item>
+    </style>
+
+
+    <!--  Component Style  -->
+    <!--  Style started with Comp -> used with theme reference (e.g. ?buttonTextDanger)  -->
+    <style name="Comp.MSA.Button.Flat.Primary" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="android:minHeight">@dimen/min_touch_default</item>
+        <item name="android:minWidth">@dimen/min_button_width</item>
+        <item name="android:paddingStart">@dimen/space_sm</item>
+        <item name="android:paddingEnd">@dimen/space_sm</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAppearance">?textAppearanceLabelLarge</item>
+        <item name="iconSize">@dimen/icon_md</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/space_xs</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Flat.Secondary" parent="Comp.MSA.Button.Flat.Primary">
+        <item name="backgroundTint">@color/stateful_btn_bg_secondary</item>
+        <item name="android:textColor">@color/stateful_btn_fg_secondary</item>
+        <item name="iconTint">@color/stateful_btn_fg_secondary</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Flat.Danger" parent="Comp.MSA.Button.Flat.Primary">
+        <item name="backgroundTint">@color/stateful_btn_bg_danger</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Outline.Primary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/min_touch_sm</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconSize">@dimen/icon_md</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+        <item name="strokeColor">@color/stateful_btn_bg_primary</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Outline.Secondary" parent="Comp.MSA.Button.Outline.Primary">
+        <item name="android:textColor">@color/stateful_btn_fg_accent</item>
+        <item name="iconTint">@color/stateful_btn_fg_accent</item>
+        <item name="strokeColor">@color/stateful_btn_bg_ring</item>
+        <item name="rippleColor">@color/stateful_ripple_secondary</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Outline.Danger" parent="Comp.MSA.Button.Outline.Primary">
+        <item name="android:textColor">@color/stateful_btn_fg_danger</item>
+        <item name="iconTint">@color/stateful_btn_fg_danger</item>
+        <item name="strokeColor">@color/stateful_btn_bg_danger</item>
+        <item name="rippleColor">@color/stateful_ripple_danger</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Text.Primary" parent="Widget.Material3.Button.TextButton">
+        <item name="android:paddingHorizontal">@dimen/space_xs</item>
+        <item name="android:paddingVertical">@dimen/space_xs</item>
+        <item name="android:minHeight">@dimen/min_touch_xs</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Text.Secondary" parent="Comp.MSA.Button.Text.Primary">
+        <item name="android:textColor">@color/stateful_btn_fg_accent</item>
+        <item name="iconTint">@color/stateful_btn_fg_accent</item>
+        <item name="rippleColor">@color/stateful_ripple_secondary</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Text.Danger" parent="Comp.MSA.Button.Text.Primary">
+        <item name="android:textColor">@color/stateful_btn_fg_danger</item>
+        <item name="iconTint">@color/stateful_btn_fg_danger</item>
+        <item name="rippleColor">@color/stateful_ripple_danger</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Text.Primary.Dialog" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="shapeAppearance">?shapeAppearanceCornerSmall</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Text.Secondary.Dialog" parent="Comp.MSA.Button.Text.Primary.Dialog">
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:textColor">@color/stateful_btn_fg_muted</item>
+        <item name="rippleColor">@color/stateful_ripple_secondary</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Icon.Primary" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minWidth">@dimen/min_touch_sm</item>
+        <item name="android:minHeight">@dimen/min_touch_sm</item>
+        <item name="android:paddingStart">@dimen/space_sm</item>
+        <item name="android:paddingEnd">@dimen/space_sm</item>
+        <item name="android:paddingTop">@dimen/space_sm</item>
+        <item name="android:paddingBottom">@dimen/space_sm</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+        <item name="iconPadding">0dp</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Icon.Secondary" parent="Comp.MSA.Button.Icon.Primary">
+        <item name="android:textColor">@color/stateful_btn_fg_accent</item>
+        <item name="iconTint">@color/stateful_btn_fg_accent</item>
+        <item name="rippleColor">@color/stateful_ripple_secondary</item>
+    </style>
+
+    <style name="Comp.MSA.Button.Icon.Danger" parent="Comp.MSA.Button.Icon.Primary">
+        <item name="android:textColor">@color/stateful_btn_fg_danger</item>
+        <item name="iconTint">@color/stateful_btn_fg_danger</item>
+        <item name="rippleColor">@color/stateful_ripple_danger</item>
+    </style>
+
+    <!--  Text input  -->
+    <style name="Comp.MSA.Input" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/stateful_text_input_stroke</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MSA.TextInputEditText</item>
+    </style>
+
+    <style name="ThemeOverlay.MSA.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="editTextStyle">@style/Comp.MSA.TextInputEditText</item>
+    </style>
+
+    <style name="Comp.MSA.TextInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox.Dense">
+        <item name="android:minHeight">@dimen/min_touch_default</item>
+    </style>
+
+    <!--  Select input, ExposedDropdownMenu  -->
+    <style name="Comp.MSA.Input.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MSA.ExposedDropdownMenu</item>
+        <item name="boxStrokeColor">@color/stateful_text_input_stroke</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerMedium</item>
+    </style>
+
+    <style name="ThemeOverlay.MSA.ExposedDropdownMenu" parent="">
+        <item name="autoCompleteTextViewStyle">@style/Comp.MSA.AutoCompleteTextView</item>
+    </style>
+
+    <style name="Comp.MSA.AutoCompleteTextView" parent="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox">
+        <item name="android:minHeight">@dimen/min_touch_default</item>
+        <item name="android:popupElevation">@dimen/elevation_sm</item>
+        <item name="android:popupBackground">@drawable/shape_rounded_bg_input_stroke</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <item name="simpleItemLayout">@layout/list_item_simple_text</item>
+        <item name="simpleItemSelectedColor">?colorAccent</item>
+    </style>
+
+    <style name="Comp.MSA.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/stateful_checkbox_bg</item>
+        <item name="buttonIconTint">@color/stateful_checkbox_fg</item>
+    </style>
+
+    <style name="Comp.MSA.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="buttonTint">@color/stateful_checkbox_bg</item>
+    </style>
+
+    <style name="Comp.MSA.ChipGroup" parent="Widget.Material3.ChipGroup">
+        <item name="singleLine">true</item>
+        <item name="chipSpacingHorizontal">@dimen/space_xs</item>
+    </style>
+
+    <style name="Comp.MSA.Chip" parent="Widget.Material3.Chip.Input">
+        <item name="android:textColor">@color/stateful_chip_fg</item>
+        <item name="chipIconTint">@color/stateful_chip_fg</item>
+        <item name="iconTint">@color/stateful_chip_fg</item>
+        <item name="closeIconTint">@color/stateful_chip_fg</item>
+        <item name="checkedIconTint">@color/stateful_chip_fg</item>
+        <item name="chipBackgroundColor">@color/stateful_chip_bg</item>
+        <item name="rippleColor">?colorOnSecondary</item>
+
+        <item name="checkedIcon">@drawable/ico_control_tick</item>
+        <item name="closeIcon">@drawable/ico_control_close</item>
+
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">?colorRing</item>
+
+        <item name="chipIconSize">@dimen/icon_sm</item>
+        <item name="checkedIconSize">@dimen/icon_sm</item>
+        <item name="iconSize">@dimen/icon_sm</item>
+        <item name="iconEndPadding">0dp</item>
+        <item name="iconStartPadding">@dimen/space_xs</item>
+
+        <item name="closeIconSize">@dimen/icon_sm</item>
+        <item name="closeIconStartPadding">0dp</item>
+        <item name="closeIconEndPadding">@dimen/space_xs</item>
+    </style>
+
+    <style name="Comp.MSA.CircularProgressIndicator" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="indicatorSize">128dp</item>
+        <item name="indicatorInset">0dp</item>
+        <item name="trackCornerRadius">6dp</item>
+        <item name="trackThickness">6dp</item>
+    </style>
+
+    <style name="Comp.MSA.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+    </style>
+
+    <style name="Comp.MSA.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.MSA.TitleMedium</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.MSA.TitleSmall</item>
+        <item name="subtitleTextColor">?colorOnMuted</item>
+        <item name="navigationIconTint">?colorOnMuted</item>
+    </style>
+
+    <style name="Comp.MSA.NavigationView" parent="Widget.Material3.NavigationView">
+        <item name="android:maxWidth">280dp</item>
+        <item name="android:background">?colorNavigation</item>
+        <item name="android:paddingTop">@dimen/space_3xl</item>
+        <item name="android:paddingBottom">@dimen/space_sm</item>
+        <item name="itemShapeFillColor">@color/stateful_nav_item_bg</item>
+        <item name="itemTextColor">@color/stateful_nav_item_text</item>
+        <item name="itemIconTint">@color/stateful_nav_item_text</item>
+        <item name="itemVerticalPadding">@dimen/space_md</item>
+        <item name="itemShapeAppearance">?shapeAppearanceCornerLarge</item>
+    </style>
+
+    <style name="ThemeOverlay.MSA.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/Comp.MSA.AlertDialog</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/Comp.MSA.AlertDialog.Title</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Comp.MSA.Button.Text.Primary.Dialog</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Comp.MSA.Button.Text.Secondary.Dialog
+        </item>
+        <item name="buttonBarNeutralButtonStyle">@style/Comp.MSA.Button.Text.Secondary.Dialog</item>
+        <item name="dialogPreferredPadding">@dimen/space_md</item>
+    </style>
+
+    <style name="Comp.MSA.AlertDialog" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearance.MSA.Corner.Large</item>
+    </style>
+
+    <style name="Comp.MSA.AlertDialog.Title" parent="MaterialAlertDialog.Material3.Title.Text">
+        <item name="android:textAppearance">?textAppearanceTitleMedium</item>
+    </style>
+
+    <style name="Comp.MSA.ActivationScreen.Logo" parent="">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Comp.MSA.ActivationScreen.Title" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.MSA.HeadlineMedium</item>
+    </style>
+
+</resources>

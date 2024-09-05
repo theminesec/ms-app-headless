@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Figma MineSec Design System  -->
+    <!--  https://www.figma.com/file/UYQLXRZjwkbK8nHDsZEoZt/MineSec-Design-System?type=design&node-id=52%3A4&mode=design&t=ckKXdxptsgfn36QB-1  -->
+
+    <!--  Inter Font Playground here  -->
+    <!--  https://rsms.me/inter/lab/?feat-cv10=1&feat-frac=1&feat-ss01=1&feat-ss04=1&size=48  -->
+
+    <style name="TextAppearance.MSA" parent="" />
+
+    <!--  Generally speaking, the material built-in theme has too many font style  -->
+    <!--  We'll just use a few of them  -->
+    <!--  To fit it to our figma design system, here's the mapping  -->
+    <!--  Header 1 -> M3.Display (all size), rarely used  -->
+
+    <!--  Header 2 -> M3.Headline.Large, amount display large  -->
+    <!--  Header 3 -> M3.Headline.Medium & Small, amount, medium  -->
+    <!--  Header 4 -> M3.Title.Large  -->
+    <!--  Header 5 -> M3.Title.Medium  -->
+    <!--  Header 6 -> M3.Title.Small  -->
+    <!--  Body -> M3.Body.Large & Medium  -->
+    <!--  Caption -> M3.Body.Small  -->
+    <!--  Button -> M3.Label.Large & Medium  -->
+    <!--  Indicator (chip) -> M3.Label.Small  -->
+
+    <!--  Header 1 -> M3.Display (all size), rarely used  -->
+    <style name="TextAppearance.MSA.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">@dimen/fontsize_4xl</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="lineHeight">92dp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.MSA.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">@dimen/fontsize_3xl</item>
+        <item name="lineHeight">64dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.MSA.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">@dimen/fontsize_2xl</item>
+        <item name="lineHeight">40dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <!--  Header 2 -> M3.Headline.Large, amount display large  -->
+    <style name="TextAppearance.MSA.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">@dimen/fontsize_3xl</item>
+        <item name="lineHeight">64dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!--  Header 3 -> M3.Headline.Medium & Small, amount, medium  -->
+    <style name="TextAppearance.MSA.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">@dimen/fontsize_2xl</item>
+        <item name="lineHeight">40dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.MSA.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/fontsize_2xl</item>
+        <item name="lineHeight">40dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!--  Header 4 -> M3.Title.Large  -->
+    <style name="TextAppearance.MSA.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">@dimen/fontsize_xl</item>
+        <item name="lineHeight">36dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!--  Header 5 -> M3.Title.Medium  -->
+    <style name="TextAppearance.MSA.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">@dimen/fontsize_lg</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!--  Header 6 -> M3.Title.Small  -->
+    <style name="TextAppearance.MSA.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/fontsize_md</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <!--  Body -> M3.Body.Large & Medium  -->
+    <style name="TextAppearance.MSA.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/fontsize_sm</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.MSA.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/fontsize_sm</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!--  Caption -> M3.Body.Small  -->
+    <style name="TextAppearance.MSA.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/fontsize_xs</item>
+        <item name="lineHeight">16dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <!--  Button -> M3.Label.Large & Medium  -->
+    <style name="TextAppearance.MSA.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">@dimen/fontsize_sm</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.MSA.LabelMedium" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/fontsize_sm</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <!--  Indicator (chip) -> M3.Label.Small  -->
+    <style name="TextAppearance.MSA.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/fontsize_xs</item>
+        <item name="lineHeight">16dp</item>
+        <item name="android:fontFeatureSettings">ss01,ss04,cv10</item>
+        <item name="android:letterSpacing">0.04</item>
+        <!--<item name="textAllCaps">true</item>-->
+    </style>
+
+    <style name="TextAppearance.MSA.AmountMedium" parent="TextAppearance.MSA.HeadlineMedium">
+        <item name="android:fontFeatureSettings">frac,tnum</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="TextAppearance.MSA.AmountSmall" parent="TextAppearance.MSA.TitleLarge">
+        <item name="android:fontFeatureSettings">frac,tnum</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="TextAppearance.MSA.AmountLarge" parent="TextAppearance.MSA.HeadlineLarge">
+        <item name="android:fontFeatureSettings">frac,tnum</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">4sp</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="TextAppearance.MSA.FooterCopyright" parent="TextAppearance.MSA.LabelMedium" />
+</resources>

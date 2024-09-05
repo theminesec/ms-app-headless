@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Widget style-->
+
+    <style name="Widget.MSA.KeypadKey" parent="Comp.MSA.Button.Outline.Secondary">
+        <item name="android:fontFeatureSettings">tnum</item>
+        <item name="android:textAppearance">@style/TextAppearance.MSA.HeadlineMedium</item>
+        <item name="minHeight">@dimen/min_touch_default</item>
+    </style>
+
+    <style name="Widget.MSA.Button.SelectInstrument" parent="Comp.MSA.Button.Outline.Secondary">
+        <item name="android:textAppearance">@style/TextAppearance.MSA.TitleSmall</item>
+        <item name="minHeight">@dimen/space_6xl</item>
+        <item name="android:paddingBottom">@dimen/space_sm</item>
+        <item name="iconGravity">textTop</item>
+        <item name="iconTint">@null</item>
+        <item name="iconSize">@dimen/icon_2xl</item>
+    </style>
+</resources>

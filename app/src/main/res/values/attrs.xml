@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Color  -->
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorOnPrimary" format="color" />
+    <attr name="colorSecondary" format="color" />
+    <attr name="colorOnSecondary" format="color" />
+    <attr name="colorApproval" format="color" />
+    <attr name="colorOnApproval" format="color" />
+    <attr name="colorError" format="color" />
+    <attr name="colorOnError" format="color" />
+    <attr name="colorMuted" format="color" />
+    <attr name="colorOnMuted" format="color" />
+    <attr name="colorAccent" format="color" />
+    <attr name="colorOnAccent" format="color" />
+    <attr name="colorInput" format="color" />
+    <attr name="colorRing" format="color" />
+    <attr name="colorSelection" format="color" />
+    <attr name="colorSurface" format="color" />
+    <attr name="colorOnSurface" format="color" />
+    <attr name="colorNavigation" format="color" />
+    <attr name="colorOnNavigation" format="color" />
+
+    <!--  Widget Helper -->
+    <attr name="buttonFlatPrimary" format="reference" />
+    <attr name="buttonFlatSecondary" format="reference" />
+    <attr name="buttonFlatDanger" format="reference" />
+
+    <attr name="buttonOutlinePrimary" format="reference" />
+    <attr name="buttonOutlineSecondary" format="reference" />
+    <attr name="buttonOutlineDanger" format="reference" />
+
+    <attr name="buttonTextPrimary" format="reference" />
+    <attr name="buttonTextSecondary" format="reference" />
+    <attr name="buttonTextDanger" format="reference" />
+
+    <attr name="buttonIconPrimary" format="reference" />
+    <attr name="buttonIconSecondary" format="reference" />
+    <attr name="buttonIconDanger" format="reference" />
+
+    <attr name="textAmountDisplayLarge" format="reference" />
+    <attr name="textAmountDisplayMedium" format="reference" />
+    <attr name="textAmountDisplaySmall" format="reference" />
+    <attr name="textAppearanceFooterCopyright" format="reference" />
+
+    <attr name="activationScreenLogo" format="reference" />
+    <attr name="activationScreenTitle" format="reference" />
+</resources>

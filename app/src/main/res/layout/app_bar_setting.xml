@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.msa.headless.ui.view.ui.SettingsActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true"
+        >
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ico_control_menu"
+            app:navigationIconTint="?colorPrimary"
+            app:title="@string/action_settings"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btnLogOut"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_md"
+                >
+
+                <TextView
+                    android:id="@+id/groupMerchant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_merchant"
+                    android:textAllCaps="true"
+                    android:textAppearance="?textAppearanceLabelSmall"
+                    android:textColor="?colorPrimary"
+                    />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/flexMerchant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    app:alignItems="baseline"
+                    app:dividerDrawable="@drawable/shape_flex_divider"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between"
+                    app:showDivider="middle"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/merchant_name"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvMchName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mid"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/device_id"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvDeviceId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/payserver_status"-->
+<!--                        android:textAppearance="?textAppearanceLabelMedium"-->
+<!--                        android:textColor="?colorOnMuted"-->
+<!--                        app:layout_wrapBefore="true"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/payServerStatus"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginVertical="@dimen/space_md"-->
+<!--                        android:textAppearance="?textAppearanceBodyLarge"-->
+<!--                        tools:text="off"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/payServerAddressName"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/payserver_address"-->
+<!--                        android:textAppearance="?textAppearanceLabelMedium"-->
+<!--                        android:textColor="?colorOnMuted"-->
+<!--                        app:layout_wrapBefore="true"-->
+<!--                        />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/payServerAddress"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginVertical="@dimen/space_md"-->
+<!--                        android:textAppearance="?textAppearanceBodyLarge"-->
+<!--                        tools:text=""-->
+<!--                        />-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/support_pre_auth"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchPreauth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:checked="false"
+                        />
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <TextView
+                    android:id="@+id/groupApplication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:text="@string/application"
+                    android:textAllCaps="true"
+                    android:textAppearance="?textAppearanceLabelSmall"
+                    android:textColor="?colorPrimary"
+                    />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/flexApplication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    app:alignItems="baseline"
+                    app:dividerDrawable="@drawable/shape_flex_divider"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between"
+                    app:showDivider="middle"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/terminal_app_software"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvSoftwarePkg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/version"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvAppVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/host_version"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvHostVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_id"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvProfileId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:ellipsize="start"
+                        android:maxWidth="200dp"
+                        android:singleLine="true"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sdk_id_str"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvSdkId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sdk_version"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvSdkVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <TextView
+                    android:id="@+id/groupPaymentApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:text="@string/payment_application"
+                    android:textAllCaps="true"
+                    android:textAppearance="?textAppearanceLabelSmall"
+                    android:textColor="?colorPrimary"
+                    android:visibility="gone"
+                    />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/flexPaymentApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    android:visibility="gone"
+                    app:alignItems="baseline"
+                    app:dividerDrawable="@drawable/shape_flex_divider"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between"
+                    app:showDivider="middle"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/terminal_app_software"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvPaymentSoftwarePkg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/version"
+                        android:textAppearance="?textAppearanceLabelMedium"
+                        android:textColor="?colorOnMuted"
+                        app:layout_wrapBefore="true"
+                        />
+                    <TextView
+                        android:id="@+id/tvPaymentAppVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/space_md"
+                        android:textAppearance="?textAppearanceBodyLarge"
+                        tools:text="123"
+                        />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_wrapBefore="true">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:src="@drawable/baseline_language_24"-->
+<!--                        android:layout_marginVertical="@dimen/space_md" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/language"-->
+<!--                        android:textAppearance="?textAppearanceLabelMedium"-->
+<!--                        android:textColor="?colorOnMuted"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:layout_marginStart="4dp"/>-->
+
+<!--                    <Spinner-->
+<!--                        android:id="@+id/spinnerLanguage"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:textAppearance="?textAppearanceBodyLarge"-->
+<!--                        android:layout_gravity="center_vertical|end"-->
+<!--                        android:gravity="end"-->
+<!--                        android:layout_marginVertical="@dimen/space_md" />-->
+<!--                </LinearLayout>-->
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_md"
+            android:text="@string/log_out_str"
+            app:layout_constraintBottom_toTopOf="@id/footerCopyright"
+            />
+
+        <TextView
+            android:id="@+id/footerCopyright"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_md"
+            android:gravity="center"
+            android:text="@string/powered_by_"
+            android:textAppearance="?textAppearanceFooterCopyright"
+            android:textColor="?colorOnMuted"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

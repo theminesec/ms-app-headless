@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--  Disabled  -->
+    <item android:alpha="@dimen/material_emphasis_disabled" android:color="?colorInput" android:state_enabled="false" />
+    <!--  Error  -->
+    <item android:color="?colorError" app:state_error="true" />
+    <!--  Indeterminate  -->
+    <item android:color="?colorPrimary" app:state_indeterminate="true" />
+    <!--  Checked  -->
+    <item android:color="?colorPrimary" android:state_checked="true" />
+    <!--  Idle -->
+    <item android:color="?colorInput" />
+</selector>
