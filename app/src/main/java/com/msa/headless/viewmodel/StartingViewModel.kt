@@ -35,7 +35,7 @@ class StartingViewModel : ViewModel() {
 
     fun initHeadless(context: Application) = viewModelScope.launch {
         val clientResp =
-            HeadlessSetup.initSoftPos(context, "MineSec_1.10.100T_am.mspayhub.com_mpoc_DEBUG.license")
+            HeadlessSetup.initSoftPos(context, "Neurogine-lic_01J716014VR2XXWBT78HJRQY3J-20240905_132918.license")
         sdkMpocInitRespLiveData.postValue(clientResp)
     }
 

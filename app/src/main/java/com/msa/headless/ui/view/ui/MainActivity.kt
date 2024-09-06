@@ -97,7 +97,7 @@ fun LoadingScreen(viewModel: StartingViewModel) {
             is WrappedResult.Failure -> {
                 Log.e(TAG, "initSoftPos:$result")
                 // Handle error case
-                ErrorDialog(errorMessage = "Init SoftPOS Failure") {
+                ErrorDialog(errorMessage = "Init SoftPOS Failure:${result.code}-${result.message}") {
                     if (context is Activity) {
                         context.finish()
                     }
