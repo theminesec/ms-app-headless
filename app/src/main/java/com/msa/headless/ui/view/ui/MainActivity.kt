@@ -2,6 +2,7 @@ package com.msa.headless.ui.view.ui
 
 
 import android.app.Activity
+import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -42,7 +43,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.msa.headless.APP
 import com.msa.headless.R
 import com.msa.headless.configs.ApplicationConfigStore
 import com.msa.headless.model.StartingNavigator
@@ -54,6 +54,7 @@ import com.theminesec.sdk.headless.model.WrappedResult
 class MainActivity : ComponentActivity() {
 
     private val viewModel: StartingViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +77,11 @@ fun LoadingScreen(viewModel: StartingViewModel) {
     val context = LocalContext.current
     var showProgress by remember { mutableStateOf(true) }
     val startingNavigator by viewModel.startingNavigatorEvent.observeAsState()
-    val sdkInitRespLiveData = (context.applicationContext as APP).sdkInitRespLiveData.observeAsState()
+    //val sdkInitRespLiveData = (context.applicationContext as APP).sdkInitRespLiveData.observeAsState()
+    val sdkInitRespLiveData = viewModel.sdkMpocInitRespLiveData.observeAsState()
+    LaunchedEffect(Unit) {
+        viewModel.initHeadless(context.applicationContext as Application)
+    }
 
     sdkInitRespLiveData.value?.let { result ->
         when (result) {
@@ -88,6 +93,7 @@ fun LoadingScreen(viewModel: StartingViewModel) {
                     viewModel.initSettings(context.applicationContext)
                 }
             }
+
             is WrappedResult.Failure -> {
                 Log.e(TAG, "initSoftPos:$result")
                 // Handle error case
@@ -104,7 +110,7 @@ fun LoadingScreen(viewModel: StartingViewModel) {
         showProgress = false
         when (event) {
             is StartingNavigator.ToActivation -> {
-                Log.d(TAG,"ToActivation->")
+                Log.d(TAG, "ToActivation->")
                 InitSettingsCompletionAnimation {
                     context.startActivity(Intent(context, ActivationActivity::class.java))
                     if (context is Activity) {
@@ -114,7 +120,7 @@ fun LoadingScreen(viewModel: StartingViewModel) {
             }
 
             is StartingNavigator.ToPayment -> {
-                Log.d(TAG,"ToPayment->")
+                Log.d(TAG, "ToPayment->")
                 InitSettingsCompletionAnimation {
                     context.startActivity(Intent(context, PaymentActivity::class.java))
                     if (context is Activity) {
@@ -124,7 +130,7 @@ fun LoadingScreen(viewModel: StartingViewModel) {
             }
 
             is StartingNavigator.ToError -> {
-                Log.d(TAG,"ToError->")
+                Log.d(TAG, "ToError->")
                 ErrorDialog(errorMessage = event.message) {
                     if (context is Activity) {
                         context.finish()
@@ -155,10 +161,10 @@ fun InitSettingsCompletionAnimation(onCompletion: () -> Unit) {
     Box(modifier = Modifier
         .fillMaxSize()
         .padding(16.dp),
-        contentAlignment = Alignment.Center){
+        contentAlignment = Alignment.Center) {
         Box(modifier = Modifier.size(128.dp)) {
             AnimatedCircle(colorResource(id = R.color.brand_primary)) {
-                Log.d(TAG,"Animation Completed GOTO Activity Now...")
+                Log.d(TAG, "Animation Completed GOTO Activity Now...")
                 onCompletion()
             }
         }
@@ -204,7 +210,7 @@ fun StartLoading(showProgress: Boolean) {
 fun FooterCopyright() {
     Column {
         Text(
-            text = stringResource(id = R.string.powered_by_), 
+            text = stringResource(id = R.string.powered_by_),
             style = MaterialTheme.typography.bodySmall,
             color = colorResource(id = R.color.basic_muted_foreground)
         )
@@ -235,7 +241,7 @@ fun ErrorDialog(errorMessage: String, onDismiss: () -> Unit) {
 }
 
 @Composable
-fun AnimatedCircle(color: Color,onAnimationComplete: () -> Unit) {
+fun AnimatedCircle(color: Color, onAnimationComplete: () -> Unit) {
     val animatedProgress = remember { Animatable(0f) }
 
     LaunchedEffect(Unit) {

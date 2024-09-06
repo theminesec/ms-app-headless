@@ -30,11 +30,11 @@ class APP : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        appScope.launch {
-            Log.d(TAG,"start to call HeadlessSetup.initSoftPos.")
-            val clientAppInitRes = HeadlessSetup.initSoftPos(this@APP, "2c2p-lic_01HYDRKKC850NA94SC00T62V3C-20240521_142410.license")
-            sdkInitRespLiveData.postValue(clientAppInitRes)
-        }
+//        appScope.launch {
+//            Log.d(TAG,"start to call HeadlessSetup.initSoftPos.")
+//            val clientAppInitRes = HeadlessSetup.initSoftPos(this@APP, "2c2p-lic_01HYDRKKC850NA94SC00T62V3C-20240521_142410.license")
+//            sdkInitRespLiveData.postValue(clientAppInitRes)
+//        }
     }
 
     fun getAppVersion(): String {

@@ -1,19 +1,12 @@
 package com.msa.headless.viewmodel
 
+import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.minesec.msa.client.sdk.management.model_k.DeviceInfoResponseDto_
-import com.minesec.msa.client.sdk.management.model_k.DownloadEMVParamDto_
-import com.minesec.msa.client.sdk.management.model_k.DownloadKeyResponse_
-import com.minesec.msa.client.sdk.management.model_k.DownloadMerchantLogoResponseDto_
-import com.minesec.msa.client.sdk.management.model_k.DownloadParamDto_
-import com.minesec.msa.client.sdk.management.model_k.DownloadParamResponseDto_
-import com.minesec.msa.client.sdk.management.model_k.SessionKeyDto_
-import com.minesec.msa.client.sdk.management.tms_.TMSClient_
 import com.msa.headless.APP
 import com.msa.headless.R
 import com.msa.headless.configs.ApplicationConfigStore
@@ -24,7 +17,7 @@ import com.msa.headless.util.ImageUtils
 import com.theminesec.sdk.headless.HeadlessSetup
 import com.theminesec.sdk.headless.SetupOptionBuilder
 import com.theminesec.sdk.headless.model.WrappedResult
-import com.theminesec.sdk.headless.model.setup.SetupResp
+import com.theminesec.sdk.headless.model.setup.SdkInitResp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.IOException
@@ -38,14 +31,21 @@ class StartingViewModel : ViewModel() {
     private val setupManager = HeadlessConfigManager()
     private val _startingNavigatorEvent = MutableLiveData<StartingNavigator>()
     val startingNavigatorEvent: LiveData<StartingNavigator> get() = _startingNavigatorEvent
+    val sdkMpocInitRespLiveData = MutableLiveData<WrappedResult<SdkInitResp>>()
+
+    fun initHeadless(context: Application) = viewModelScope.launch {
+        val clientResp =
+            HeadlessSetup.initSoftPos(context, "MineSec_1.10.100T_am.mspayhub.com_mpoc_DEBUG.license")
+        sdkMpocInitRespLiveData.postValue(clientResp)
+    }
 
     fun initSettings(context: Context, builderAction: (SetupOptionBuilder.() -> Unit)? = null) {
         viewModelScope.launch(Dispatchers.IO) {
             val result = runCatching {
                 // Get device info from TMS
                 val deviceInfoResult = setupManager.getDeviceInfo()
-                Log.d(TAG,"code:" + deviceInfoResult.code)
-                Log.d(TAG,"msg:" + deviceInfoResult.msg)
+                Log.d(TAG, "code:" + deviceInfoResult.code)
+                Log.d(TAG, "msg:" + deviceInfoResult.msg)
                 Log.d(TAG, "getDeviceInfo: $deviceInfoResult")
                 if (!deviceInfoResult.approved()) {
                     _startingNavigatorEvent.postValue(StartingNavigator.ToActivation)
@@ -80,6 +80,7 @@ class StartingViewModel : ViewModel() {
                     is IOException, is GeneralSecurityException -> {
                         _startingNavigatorEvent.postValue(StartingNavigator.ToError(APP.instance.getString(R.string.network_error_message)))
                     }
+
                     else -> {
                         _startingNavigatorEvent.postValue(StartingNavigator.ToError(APP.instance.getString(R.string.system_error_message)))
                     }
