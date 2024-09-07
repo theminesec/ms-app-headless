@@ -2,9 +2,9 @@
 <resources>
     <!--  Branding  -->
     <!--  Override per brand  -->
-    <color name="brand_primary">#29D657</color>
+    <color name="brand_primary">#EF6F25</color>
     <color name="brand_primary_foreground">#F0FDF4</color>
-    <color name="brand_secondary">#0A307A</color>
+    <color name="brand_secondary">#005EED</color>
     <color name="brand_secondary_foreground">#EDF2FD</color>
 
     <!--  basic background, surface  -->

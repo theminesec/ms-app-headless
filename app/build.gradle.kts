@@ -22,7 +22,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -104,7 +104,7 @@ dependencies {
     implementation(libs.signaturepad)
 
     //implementation("com.theminesec.sdk:headless-stage:1.0.17")
-    //implementation("com.theminesec.sdk:headless-mpoc-stage:1.1.17")
-    implementation("com.theminesec.sdk:headless-mpoc:1.1.17")
+    implementation("com.theminesec.sdk:headless-mpoc-stage:1.1.18")
+//    implementation("com.theminesec.sdk:headless-mpoc:1.1.18")
 
 }
