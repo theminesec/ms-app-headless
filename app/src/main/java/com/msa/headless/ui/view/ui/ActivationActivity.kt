@@ -266,7 +266,7 @@ fun LoadingIndicator() {
             CircularProgressIndicator(
                 modifier = Modifier.size(56.dp),
                 strokeWidth = 4.dp,
-                color = Color.Green
+                color = colorResource(id = R.color.brand_primary)
             )
         }
     }
