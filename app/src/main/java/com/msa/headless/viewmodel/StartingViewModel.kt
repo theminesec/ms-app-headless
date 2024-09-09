@@ -35,7 +35,7 @@ class StartingViewModel : ViewModel() {
 
     fun initHeadless(context: Application) = viewModelScope.launch {
         val clientResp =
-            HeadlessSetup.initSoftPos(context, "MineSec-lic_01J715Z467DQ5AYN1HFR6W8ZNT-20240909_041233.license")
+            HeadlessSetup.initSoftPos(context, "MineSec-lic_01J715Z467DQ5AYN1HFR6W8ZNT-20240909_063054.license")
         sdkMpocInitRespLiveData.postValue(clientResp)
     }
 
