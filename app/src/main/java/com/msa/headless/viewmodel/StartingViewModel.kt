@@ -36,7 +36,7 @@ class StartingViewModel : ViewModel() {
     fun initHeadless(context: Application) = viewModelScope.launch {
         val clientResp =
 //            HeadlessSetup.initSoftPos(context, "MineSec-lic_01J715Z467DQ5AYN1HFR6W8ZNT-20240905_132848.license") //For BCTC
-            HeadlessSetup.initSoftPos(context, "Neurogine-lic_01J716014VR2XXWBT78HJRQY3J-20240909_041222.license") //For Neurogine
+            HeadlessSetup.initSoftPos(context, "Neurogine-lic_01J716014VR2XXWBT78HJRQY3J-20240909_081341.license") //For Neurogine
         sdkMpocInitRespLiveData.postValue(clientResp)
     }
 
