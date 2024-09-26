@@ -220,7 +220,7 @@ class PaymentActivity : BaseActivity(),Navigator {
 
     private fun startPaymentAction() {
         paymentBinding.appBarMain.doPayment.setOnClickListener {
-            val transAmount = paymentBinding.appBarMain.amountEdit.text.toString()
+            val transAmount = paymentBinding.appBarMain.amountEdit.text.toString().replace(",","")
             Log.d(TAG,"startPaymentAction profileId:" + ApplicationConfigStore().getProfileId())
             if (transAmount.isNotEmpty()) {
                 resultLauncher.launch(

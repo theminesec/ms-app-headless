@@ -153,6 +153,7 @@ fun ActivationScreen(viewModel: ActivationViewModel,onActivationSuccess: () -> U
                     // Calculate new cursor position
                     isLoginEnabled = formattedText.length == 14
                     isError = false
+                    viewModel.clearErrorMessage()
                 }, // replace with your onValueChange
                 modifier = Modifier
                     .fillMaxWidth()
