@@ -1,3 +1,8 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
+import org.jetbrains.kotlin.utils.filterIsInstanceAnd
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -11,8 +16,60 @@ android {
         applicationId = "com.msa.headless"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        /**
+         * Version pattern
+         * A.BB.CCC.DDD(MMM)
+         * For MPoC starting from 2.00.000.DDD(MMM)
+         * Normally A.BB should rarely change and should be part of the wildcard versioning
+         *
+         * A -
+         * Major version change: Complete architecture changes of the application
+         * Change would trigger full certification.
+         *
+         * BB -
+         * Minor version change: Changes that might impact scope of certified product.
+         * Change of BB will require delta certification on the next renewal of the solution
+         *
+         * CCC -
+         * Functions version change: Bug fixes, new SDK version, changes in sub-core components, UI updates…
+         * Change of CCC will NOT require any re-certification.
+         *
+         * DDD - First 3 digits of the build number
+         * MMM - First 3 digits of CustomerID
+         */
+        // DO NOT CHANGE, re-cert require
+        val majorVersion = 2
+        // DO NOT CHANGE, re-cert require
+        val minorVersion = 0
+        // msa component lib version
+        val patchVersion: Int = "003".toInt()
+        // license update, build config changes
+        val buildVersion = 1
+        // Neurogine
+        val customerId = 990
+
+        println("majorVersion: $majorVersion,\nminorVersion: $minorVersion,\npatchVersion: $patchVersion,\nbuildVersion: $buildVersion,\ncustomerId: $customerId")
+
+        val verCode = 0
+            .plus(majorVersion.times(1_00_000_000))
+            .plus(minorVersion.times(1_000_000))
+            .plus(patchVersion.times(1_000))
+            .plus(buildVersion)
+
+        println("verCode: $verCode")
+
+        val verName = "$majorVersion" +
+                ".${minorVersion.toString().padStart(2, '0')}" +
+                ".${patchVersion.toString().padStart(3, '0')}" +
+                ".${buildVersion.toString().padStart(3, '0')}" +
+                "(${customerId.toString().padStart(3, '0')})"
+
+        versionCode = verCode
+        versionName = verName
+
+        val formatter = DateTimeFormatter.ofPattern("yyMMdd_hhmm")
+        val currentTime = LocalDateTime.now().format(formatter)
+        archivesName = "$applicationId-$versionName-${currentTime}"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -104,7 +161,7 @@ dependencies {
     implementation(libs.signaturepad)
 
     //implementation("com.theminesec.sdk:headless-stage:1.0.17")
-    //implementation("com.theminesec.sdk:headless-mpoc-stage:1.1.18")
-    implementation("com.theminesec.sdk:headless-mpoc:1.1.18")
+//    implementation("com.theminesec.sdk:headless-mpoc-stage:2.0.1")
+    implementation("com.theminesec.sdk:headless-mpoc:2.0.1")
 
 }
