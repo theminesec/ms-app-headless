@@ -41,7 +41,7 @@ android {
         // DO NOT CHANGE, re-cert require
         val minorVersion = 0
         // msa component lib version
-        val patchVersion: Int = "001".toInt()
+        val patchVersion: Int = "004".toInt()
         // license update, build config changes
         val buildVersion = 1
         // Neurogine
@@ -78,7 +78,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -160,7 +160,6 @@ dependencies {
     implementation(libs.signaturepad)
 
     //implementation("com.theminesec.sdk:headless-stage:1.0.17")
-    implementation("com.theminesec.sdk:headless-mpoc-stage:1.1.18")
-//    implementation("com.theminesec.sdk:headless-mpoc:1.1.18")
-
+//    implementation("com.theminesec.sdk:headless-mpoc-stage:2.0.1")
+    implementation("com.theminesec.sdk:headless-mpoc:2.0.1")
 }
