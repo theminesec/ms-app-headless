@@ -28,12 +28,23 @@
         android:name="com.google.android.gms.permission.AD_ID"
         tools:node="remove" />
 
+    <uses-permission
+        android:name="android.permission.READ_SMS"
+        tools:node="remove" />
+
+    <uses-permission
+        android:name="android.permission.BODY_SENSORS"
+        tools:node="remove" />
+
     <uses-feature
         android:name="android.hardware.nfc"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:required="true" />
     <uses-feature
         android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
         android:required="false" />
 
     <application

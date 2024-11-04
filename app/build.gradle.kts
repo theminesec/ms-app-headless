@@ -42,7 +42,7 @@ android {
         // DO NOT CHANGE, re-cert require
         val minorVersion = 0
         // msa component lib version
-        val patchVersion: Int = "005".toInt()
+        val patchVersion: Int = "008".toInt()
         // license update, build config changes
         val buildVersion = 1
         // Neurogine
@@ -161,7 +161,7 @@ dependencies {
     implementation(libs.signaturepad)
 
     //implementation("com.theminesec.sdk:headless-stage:1.0.17")
-    implementation("com.theminesec.sdk:headless-mpoc-stage:2.0.1")
-//    implementation("com.theminesec.sdk:headless-mpoc:2.0.1")
+//    implementation("com.theminesec.sdk:headless-mpoc-stage:2.0.1")
+    implementation("com.theminesec.sdk:headless-mpoc:2.0.1")
 
 }
